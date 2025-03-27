@@ -5,24 +5,13 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
-  output: "standalone",
-  images: {
-    unoptimized: true,
-  },
-  experimental: {
-    outputFileTracing: true,
-    outputStandalone: true,
-    disableOptimizedLoading: false,
-  },
+ 
   webpack: (config) => {
     config.module.rules.push({
       test: /rehype-prism-plus/,
       type: "javascript/auto",
     });
     return config;
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 };
 
